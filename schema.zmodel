@@ -1,0 +1,37 @@
+model UserClassProgress {
+  id            Int @id @default(autoincrement())
+  userId        String
+  classId       String
+  watched       Boolean
+
+  @@allow('all', true)
+}
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+
+// generator erd {
+//   provider = "prisma-dbml-generator"
+// }
+
+plugin openapi {
+  provider = "@zenstackhq/openapi"
+  output = "api-docs.json"
+  title = "Dance Lab API"
+  version = "1.0.0"
+  flavor = "rpc"
+}
+
+plugin hooks {
+  provider = '@zenstackhq/tanstack-query'
+  output = "./lib/db/hooks"
+  target = "react"
+}

@@ -1,0 +1,2791 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Dance Lab API",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "userClassProgress",
+      "description": "UserClassProgress operations"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "UserClassProgressScalarFieldEnum": {
+        "type": "string",
+        "enum": [
+          "id",
+          "userId",
+          "classId",
+          "watched"
+        ]
+      },
+      "SortOrder": {
+        "type": "string",
+        "enum": [
+          "asc",
+          "desc"
+        ]
+      },
+      "UserClassProgress": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "classId": {
+            "type": "string"
+          },
+          "watched": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "userId",
+          "classId",
+          "watched"
+        ]
+      },
+      "UserClassProgressWhereInput": {
+        "type": "object",
+        "properties": {
+          "AND": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UserClassProgressWhereInput"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UserClassProgressWhereInput"
+                }
+              }
+            ]
+          },
+          "OR": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserClassProgressWhereInput"
+            }
+          },
+          "NOT": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UserClassProgressWhereInput"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UserClassProgressWhereInput"
+                }
+              }
+            ]
+          },
+          "id": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/IntFilter"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          },
+          "userId": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/StringFilter"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "classId": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/StringFilter"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "watched": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BoolFilter"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          }
+        }
+      },
+      "UserClassProgressOrderByWithRelationInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/SortOrder"
+          },
+          "userId": {
+            "$ref": "#/components/schemas/SortOrder"
+          },
+          "classId": {
+            "$ref": "#/components/schemas/SortOrder"
+          },
+          "watched": {
+            "$ref": "#/components/schemas/SortOrder"
+          }
+        }
+      },
+      "UserClassProgressWhereUniqueInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "AND": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UserClassProgressWhereInput"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UserClassProgressWhereInput"
+                }
+              }
+            ]
+          },
+          "OR": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserClassProgressWhereInput"
+            }
+          },
+          "NOT": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UserClassProgressWhereInput"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UserClassProgressWhereInput"
+                }
+              }
+            ]
+          },
+          "userId": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/StringFilter"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "classId": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/StringFilter"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "watched": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BoolFilter"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          }
+        }
+      },
+      "UserClassProgressScalarWhereWithAggregatesInput": {
+        "type": "object",
+        "properties": {
+          "AND": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UserClassProgressScalarWhereWithAggregatesInput"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UserClassProgressScalarWhereWithAggregatesInput"
+                }
+              }
+            ]
+          },
+          "OR": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserClassProgressScalarWhereWithAggregatesInput"
+            }
+          },
+          "NOT": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UserClassProgressScalarWhereWithAggregatesInput"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UserClassProgressScalarWhereWithAggregatesInput"
+                }
+              }
+            ]
+          },
+          "id": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/IntWithAggregatesFilter"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          },
+          "userId": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/StringWithAggregatesFilter"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "classId": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/StringWithAggregatesFilter"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "watched": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BoolWithAggregatesFilter"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          }
+        }
+      },
+      "UserClassProgressCreateInput": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "classId": {
+            "type": "string"
+          },
+          "watched": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "userId",
+          "classId",
+          "watched"
+        ]
+      },
+      "UserClassProgressUpdateInput": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "$ref": "#/components/schemas/StringFieldUpdateOperationsInput"
+              }
+            ]
+          },
+          "classId": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "$ref": "#/components/schemas/StringFieldUpdateOperationsInput"
+              }
+            ]
+          },
+          "watched": {
+            "oneOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "$ref": "#/components/schemas/BoolFieldUpdateOperationsInput"
+              }
+            ]
+          }
+        }
+      },
+      "UserClassProgressCreateManyInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "classId": {
+            "type": "string"
+          },
+          "watched": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "userId",
+          "classId",
+          "watched"
+        ]
+      },
+      "UserClassProgressUpdateManyMutationInput": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "$ref": "#/components/schemas/StringFieldUpdateOperationsInput"
+              }
+            ]
+          },
+          "classId": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "$ref": "#/components/schemas/StringFieldUpdateOperationsInput"
+              }
+            ]
+          },
+          "watched": {
+            "oneOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "$ref": "#/components/schemas/BoolFieldUpdateOperationsInput"
+              }
+            ]
+          }
+        }
+      },
+      "IntFilter": {
+        "type": "object",
+        "properties": {
+          "equals": {
+            "type": "integer"
+          },
+          "in": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "notIn": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "lt": {
+            "type": "integer"
+          },
+          "lte": {
+            "type": "integer"
+          },
+          "gt": {
+            "type": "integer"
+          },
+          "gte": {
+            "type": "integer"
+          },
+          "not": {
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "$ref": "#/components/schemas/NestedIntFilter"
+              }
+            ]
+          }
+        }
+      },
+      "StringFilter": {
+        "type": "object",
+        "properties": {
+          "equals": {
+            "type": "string"
+          },
+          "in": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notIn": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "lt": {
+            "type": "string"
+          },
+          "lte": {
+            "type": "string"
+          },
+          "gt": {
+            "type": "string"
+          },
+          "gte": {
+            "type": "string"
+          },
+          "contains": {
+            "type": "string"
+          },
+          "startsWith": {
+            "type": "string"
+          },
+          "endsWith": {
+            "type": "string"
+          },
+          "not": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "$ref": "#/components/schemas/NestedStringFilter"
+              }
+            ]
+          }
+        }
+      },
+      "BoolFilter": {
+        "type": "object",
+        "properties": {
+          "equals": {
+            "type": "boolean"
+          },
+          "not": {
+            "oneOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "$ref": "#/components/schemas/NestedBoolFilter"
+              }
+            ]
+          }
+        }
+      },
+      "IntWithAggregatesFilter": {
+        "type": "object",
+        "properties": {
+          "equals": {
+            "type": "integer"
+          },
+          "in": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "notIn": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "lt": {
+            "type": "integer"
+          },
+          "lte": {
+            "type": "integer"
+          },
+          "gt": {
+            "type": "integer"
+          },
+          "gte": {
+            "type": "integer"
+          },
+          "not": {
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "$ref": "#/components/schemas/NestedIntWithAggregatesFilter"
+              }
+            ]
+          },
+          "_count": {
+            "$ref": "#/components/schemas/NestedIntFilter"
+          },
+          "_avg": {
+            "$ref": "#/components/schemas/NestedFloatFilter"
+          },
+          "_sum": {
+            "$ref": "#/components/schemas/NestedIntFilter"
+          },
+          "_min": {
+            "$ref": "#/components/schemas/NestedIntFilter"
+          },
+          "_max": {
+            "$ref": "#/components/schemas/NestedIntFilter"
+          }
+        }
+      },
+      "StringWithAggregatesFilter": {
+        "type": "object",
+        "properties": {
+          "equals": {
+            "type": "string"
+          },
+          "in": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notIn": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "lt": {
+            "type": "string"
+          },
+          "lte": {
+            "type": "string"
+          },
+          "gt": {
+            "type": "string"
+          },
+          "gte": {
+            "type": "string"
+          },
+          "contains": {
+            "type": "string"
+          },
+          "startsWith": {
+            "type": "string"
+          },
+          "endsWith": {
+            "type": "string"
+          },
+          "not": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "$ref": "#/components/schemas/NestedStringWithAggregatesFilter"
+              }
+            ]
+          },
+          "_count": {
+            "$ref": "#/components/schemas/NestedIntFilter"
+          },
+          "_min": {
+            "$ref": "#/components/schemas/NestedStringFilter"
+          },
+          "_max": {
+            "$ref": "#/components/schemas/NestedStringFilter"
+          }
+        }
+      },
+      "BoolWithAggregatesFilter": {
+        "type": "object",
+        "properties": {
+          "equals": {
+            "type": "boolean"
+          },
+          "not": {
+            "oneOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "$ref": "#/components/schemas/NestedBoolWithAggregatesFilter"
+              }
+            ]
+          },
+          "_count": {
+            "$ref": "#/components/schemas/NestedIntFilter"
+          },
+          "_min": {
+            "$ref": "#/components/schemas/NestedBoolFilter"
+          },
+          "_max": {
+            "$ref": "#/components/schemas/NestedBoolFilter"
+          }
+        }
+      },
+      "StringFieldUpdateOperationsInput": {
+        "type": "object",
+        "properties": {
+          "set": {
+            "type": "string"
+          }
+        }
+      },
+      "BoolFieldUpdateOperationsInput": {
+        "type": "object",
+        "properties": {
+          "set": {
+            "type": "boolean"
+          }
+        }
+      },
+      "NestedIntFilter": {
+        "type": "object",
+        "properties": {
+          "equals": {
+            "type": "integer"
+          },
+          "in": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "notIn": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "lt": {
+            "type": "integer"
+          },
+          "lte": {
+            "type": "integer"
+          },
+          "gt": {
+            "type": "integer"
+          },
+          "gte": {
+            "type": "integer"
+          },
+          "not": {
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "$ref": "#/components/schemas/NestedIntFilter"
+              }
+            ]
+          }
+        }
+      },
+      "NestedStringFilter": {
+        "type": "object",
+        "properties": {
+          "equals": {
+            "type": "string"
+          },
+          "in": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notIn": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "lt": {
+            "type": "string"
+          },
+          "lte": {
+            "type": "string"
+          },
+          "gt": {
+            "type": "string"
+          },
+          "gte": {
+            "type": "string"
+          },
+          "contains": {
+            "type": "string"
+          },
+          "startsWith": {
+            "type": "string"
+          },
+          "endsWith": {
+            "type": "string"
+          },
+          "not": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "$ref": "#/components/schemas/NestedStringFilter"
+              }
+            ]
+          }
+        }
+      },
+      "NestedBoolFilter": {
+        "type": "object",
+        "properties": {
+          "equals": {
+            "type": "boolean"
+          },
+          "not": {
+            "oneOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "$ref": "#/components/schemas/NestedBoolFilter"
+              }
+            ]
+          }
+        }
+      },
+      "NestedIntWithAggregatesFilter": {
+        "type": "object",
+        "properties": {
+          "equals": {
+            "type": "integer"
+          },
+          "in": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "notIn": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "lt": {
+            "type": "integer"
+          },
+          "lte": {
+            "type": "integer"
+          },
+          "gt": {
+            "type": "integer"
+          },
+          "gte": {
+            "type": "integer"
+          },
+          "not": {
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "$ref": "#/components/schemas/NestedIntWithAggregatesFilter"
+              }
+            ]
+          },
+          "_count": {
+            "$ref": "#/components/schemas/NestedIntFilter"
+          },
+          "_avg": {
+            "$ref": "#/components/schemas/NestedFloatFilter"
+          },
+          "_sum": {
+            "$ref": "#/components/schemas/NestedIntFilter"
+          },
+          "_min": {
+            "$ref": "#/components/schemas/NestedIntFilter"
+          },
+          "_max": {
+            "$ref": "#/components/schemas/NestedIntFilter"
+          }
+        }
+      },
+      "NestedFloatFilter": {
+        "type": "object",
+        "properties": {
+          "equals": {
+            "type": "number"
+          },
+          "in": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "notIn": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "lt": {
+            "type": "number"
+          },
+          "lte": {
+            "type": "number"
+          },
+          "gt": {
+            "type": "number"
+          },
+          "gte": {
+            "type": "number"
+          },
+          "not": {
+            "oneOf": [
+              {
+                "type": "number"
+              },
+              {
+                "$ref": "#/components/schemas/NestedFloatFilter"
+              }
+            ]
+          }
+        }
+      },
+      "NestedStringWithAggregatesFilter": {
+        "type": "object",
+        "properties": {
+          "equals": {
+            "type": "string"
+          },
+          "in": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notIn": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "lt": {
+            "type": "string"
+          },
+          "lte": {
+            "type": "string"
+          },
+          "gt": {
+            "type": "string"
+          },
+          "gte": {
+            "type": "string"
+          },
+          "contains": {
+            "type": "string"
+          },
+          "startsWith": {
+            "type": "string"
+          },
+          "endsWith": {
+            "type": "string"
+          },
+          "not": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "$ref": "#/components/schemas/NestedStringWithAggregatesFilter"
+              }
+            ]
+          },
+          "_count": {
+            "$ref": "#/components/schemas/NestedIntFilter"
+          },
+          "_min": {
+            "$ref": "#/components/schemas/NestedStringFilter"
+          },
+          "_max": {
+            "$ref": "#/components/schemas/NestedStringFilter"
+          }
+        }
+      },
+      "NestedBoolWithAggregatesFilter": {
+        "type": "object",
+        "properties": {
+          "equals": {
+            "type": "boolean"
+          },
+          "not": {
+            "oneOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "$ref": "#/components/schemas/NestedBoolWithAggregatesFilter"
+              }
+            ]
+          },
+          "_count": {
+            "$ref": "#/components/schemas/NestedIntFilter"
+          },
+          "_min": {
+            "$ref": "#/components/schemas/NestedBoolFilter"
+          },
+          "_max": {
+            "$ref": "#/components/schemas/NestedBoolFilter"
+          }
+        }
+      },
+      "UserClassProgressSelect": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "boolean"
+          },
+          "userId": {
+            "type": "boolean"
+          },
+          "classId": {
+            "type": "boolean"
+          },
+          "watched": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UserClassProgressCountAggregateInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "boolean"
+          },
+          "userId": {
+            "type": "boolean"
+          },
+          "classId": {
+            "type": "boolean"
+          },
+          "watched": {
+            "type": "boolean"
+          },
+          "_all": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UserClassProgressAvgAggregateInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UserClassProgressSumAggregateInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UserClassProgressMinAggregateInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "boolean"
+          },
+          "userId": {
+            "type": "boolean"
+          },
+          "classId": {
+            "type": "boolean"
+          },
+          "watched": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UserClassProgressMaxAggregateInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "boolean"
+          },
+          "userId": {
+            "type": "boolean"
+          },
+          "classId": {
+            "type": "boolean"
+          },
+          "watched": {
+            "type": "boolean"
+          }
+        }
+      },
+      "AggregateUserClassProgress": {
+        "type": "object",
+        "properties": {
+          "_count": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/UserClassProgressCountAggregateOutputType"
+              }
+            ]
+          },
+          "_avg": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/UserClassProgressAvgAggregateOutputType"
+              }
+            ]
+          },
+          "_sum": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/UserClassProgressSumAggregateOutputType"
+              }
+            ]
+          },
+          "_min": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/UserClassProgressMinAggregateOutputType"
+              }
+            ]
+          },
+          "_max": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/UserClassProgressMaxAggregateOutputType"
+              }
+            ]
+          }
+        }
+      },
+      "UserClassProgressGroupByOutputType": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "classId": {
+            "type": "string"
+          },
+          "watched": {
+            "type": "boolean"
+          },
+          "_count": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/UserClassProgressCountAggregateOutputType"
+              }
+            ]
+          },
+          "_avg": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/UserClassProgressAvgAggregateOutputType"
+              }
+            ]
+          },
+          "_sum": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/UserClassProgressSumAggregateOutputType"
+              }
+            ]
+          },
+          "_min": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/UserClassProgressMinAggregateOutputType"
+              }
+            ]
+          },
+          "_max": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/UserClassProgressMaxAggregateOutputType"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "userId",
+          "classId",
+          "watched"
+        ]
+      },
+      "UserClassProgressCountAggregateOutputType": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "userId": {
+            "type": "integer"
+          },
+          "classId": {
+            "type": "integer"
+          },
+          "watched": {
+            "type": "integer"
+          },
+          "_all": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "userId",
+          "classId",
+          "watched",
+          "_all"
+        ]
+      },
+      "UserClassProgressAvgAggregateOutputType": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          }
+        }
+      },
+      "UserClassProgressSumAggregateOutputType": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          }
+        }
+      },
+      "UserClassProgressMinAggregateOutputType": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          },
+          "userId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "classId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "watched": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          }
+        }
+      },
+      "UserClassProgressMaxAggregateOutputType": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          },
+          "userId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "classId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "watched": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          }
+        }
+      },
+      "_Meta": {
+        "type": "object",
+        "description": "Meta information about the request or response",
+        "properties": {
+          "serialization": {
+            "description": "Serialization metadata"
+          }
+        },
+        "additionalProperties": true
+      },
+      "_Error": {
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "properties": {
+          "error": {
+            "type": "object",
+            "required": [
+              "message"
+            ],
+            "properties": {
+              "prisma": {
+                "type": "boolean",
+                "description": "Indicates if the error occurred during a Prisma call"
+              },
+              "rejectedByPolicy": {
+                "type": "boolean",
+                "description": "Indicates if the error was due to rejection by a policy"
+              },
+              "code": {
+                "type": "string",
+                "description": "Prisma error code. Only available when \"prisma\" field is true."
+              },
+              "message": {
+                "type": "string",
+                "description": "Error message"
+              },
+              "reason": {
+                "type": "string",
+                "description": "Detailed error reason"
+              },
+              "zodErrors": {
+                "type": "object",
+                "additionalProperties": true,
+                "description": "Zod validation errors if the error is due to data validation failure"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "BatchPayload": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer"
+          }
+        }
+      },
+      "UserClassProgressCreateArgs": {
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "select": {
+            "$ref": "#/components/schemas/UserClassProgressSelect"
+          },
+          "data": {
+            "$ref": "#/components/schemas/UserClassProgressCreateInput"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_Meta"
+          }
+        }
+      },
+      "UserClassProgressCreateManyArgs": {
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UserClassProgressCreateManyInput"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UserClassProgressCreateManyInput"
+                }
+              }
+            ]
+          },
+          "skipDuplicates": {
+            "type": "boolean",
+            "description": "Do not insert records with unique fields or ID fields that already exist."
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_Meta"
+          }
+        }
+      },
+      "UserClassProgressFindUniqueArgs": {
+        "type": "object",
+        "required": [
+          "where"
+        ],
+        "properties": {
+          "select": {
+            "$ref": "#/components/schemas/UserClassProgressSelect"
+          },
+          "where": {
+            "$ref": "#/components/schemas/UserClassProgressWhereUniqueInput"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_Meta"
+          }
+        }
+      },
+      "UserClassProgressFindFirstArgs": {
+        "type": "object",
+        "properties": {
+          "select": {
+            "$ref": "#/components/schemas/UserClassProgressSelect"
+          },
+          "where": {
+            "$ref": "#/components/schemas/UserClassProgressWhereInput"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_Meta"
+          }
+        }
+      },
+      "UserClassProgressFindManyArgs": {
+        "type": "object",
+        "properties": {
+          "select": {
+            "$ref": "#/components/schemas/UserClassProgressSelect"
+          },
+          "where": {
+            "$ref": "#/components/schemas/UserClassProgressWhereInput"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_Meta"
+          }
+        }
+      },
+      "UserClassProgressUpdateArgs": {
+        "type": "object",
+        "required": [
+          "where",
+          "data"
+        ],
+        "properties": {
+          "select": {
+            "$ref": "#/components/schemas/UserClassProgressSelect"
+          },
+          "where": {
+            "$ref": "#/components/schemas/UserClassProgressWhereUniqueInput"
+          },
+          "data": {
+            "$ref": "#/components/schemas/UserClassProgressUpdateInput"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_Meta"
+          }
+        }
+      },
+      "UserClassProgressUpdateManyArgs": {
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/UserClassProgressWhereInput"
+          },
+          "data": {
+            "$ref": "#/components/schemas/UserClassProgressUpdateManyMutationInput"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_Meta"
+          }
+        }
+      },
+      "UserClassProgressUpsertArgs": {
+        "type": "object",
+        "required": [
+          "create",
+          "update",
+          "where"
+        ],
+        "properties": {
+          "select": {
+            "$ref": "#/components/schemas/UserClassProgressSelect"
+          },
+          "where": {
+            "$ref": "#/components/schemas/UserClassProgressWhereUniqueInput"
+          },
+          "create": {
+            "$ref": "#/components/schemas/UserClassProgressCreateInput"
+          },
+          "update": {
+            "$ref": "#/components/schemas/UserClassProgressUpdateInput"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_Meta"
+          }
+        }
+      },
+      "UserClassProgressDeleteUniqueArgs": {
+        "type": "object",
+        "required": [
+          "where"
+        ],
+        "properties": {
+          "select": {
+            "$ref": "#/components/schemas/UserClassProgressSelect"
+          },
+          "where": {
+            "$ref": "#/components/schemas/UserClassProgressWhereUniqueInput"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_Meta"
+          }
+        }
+      },
+      "UserClassProgressDeleteManyArgs": {
+        "type": "object",
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/UserClassProgressWhereInput"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_Meta"
+          }
+        }
+      },
+      "UserClassProgressCountArgs": {
+        "type": "object",
+        "properties": {
+          "select": {
+            "$ref": "#/components/schemas/UserClassProgressSelect"
+          },
+          "where": {
+            "$ref": "#/components/schemas/UserClassProgressWhereInput"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_Meta"
+          }
+        }
+      },
+      "UserClassProgressAggregateArgs": {
+        "type": "object",
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/UserClassProgressWhereInput"
+          },
+          "orderBy": {
+            "$ref": "#/components/schemas/UserClassProgressOrderByWithRelationInput"
+          },
+          "cursor": {
+            "$ref": "#/components/schemas/UserClassProgressWhereUniqueInput"
+          },
+          "take": {
+            "type": "integer"
+          },
+          "skip": {
+            "type": "integer"
+          },
+          "_count": {
+            "oneOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "$ref": "#/components/schemas/UserClassProgressCountAggregateInput"
+              }
+            ]
+          },
+          "_min": {
+            "$ref": "#/components/schemas/UserClassProgressMinAggregateInput"
+          },
+          "_max": {
+            "$ref": "#/components/schemas/UserClassProgressMaxAggregateInput"
+          },
+          "_sum": {
+            "$ref": "#/components/schemas/UserClassProgressSumAggregateInput"
+          },
+          "_avg": {
+            "$ref": "#/components/schemas/UserClassProgressAvgAggregateInput"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_Meta"
+          }
+        }
+      },
+      "UserClassProgressGroupByArgs": {
+        "type": "object",
+        "properties": {
+          "where": {
+            "$ref": "#/components/schemas/UserClassProgressWhereInput"
+          },
+          "orderBy": {
+            "$ref": "#/components/schemas/UserClassProgressOrderByWithRelationInput"
+          },
+          "by": {
+            "$ref": "#/components/schemas/UserClassProgressScalarFieldEnum"
+          },
+          "having": {
+            "$ref": "#/components/schemas/UserClassProgressScalarWhereWithAggregatesInput"
+          },
+          "take": {
+            "type": "integer"
+          },
+          "skip": {
+            "type": "integer"
+          },
+          "_count": {
+            "oneOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "$ref": "#/components/schemas/UserClassProgressCountAggregateInput"
+              }
+            ]
+          },
+          "_min": {
+            "$ref": "#/components/schemas/UserClassProgressMinAggregateInput"
+          },
+          "_max": {
+            "$ref": "#/components/schemas/UserClassProgressMaxAggregateInput"
+          },
+          "_sum": {
+            "$ref": "#/components/schemas/UserClassProgressSumAggregateInput"
+          },
+          "_avg": {
+            "$ref": "#/components/schemas/UserClassProgressAvgAggregateInput"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_Meta"
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/userClassProgress/create": {
+      "post": {
+        "operationId": "createUserClassProgress",
+        "description": "Create a new UserClassProgress",
+        "tags": [
+          "userClassProgress"
+        ],
+        "security": [],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/UserClassProgress",
+                      "description": "The Prisma response data serialized with superjson"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/_Meta",
+                      "description": "The superjson serialization metadata for the \"data\" field"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is unprocessable due to validation errors"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserClassProgressCreateArgs"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/userClassProgress/createMany": {
+      "post": {
+        "operationId": "createManyUserClassProgress",
+        "description": "Create several UserClassProgress",
+        "tags": [
+          "userClassProgress"
+        ],
+        "security": [],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/BatchPayload",
+                      "description": "The Prisma response data serialized with superjson"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/_Meta",
+                      "description": "The superjson serialization metadata for the \"data\" field"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is unprocessable due to validation errors"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserClassProgressCreateManyArgs"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/userClassProgress/findUnique": {
+      "get": {
+        "operationId": "findUniqueUserClassProgress",
+        "description": "Find one unique UserClassProgress",
+        "tags": [
+          "userClassProgress"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/UserClassProgress",
+                      "description": "The Prisma response data serialized with superjson"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/_Meta",
+                      "description": "The superjson serialization metadata for the \"data\" field"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is unprocessable due to validation errors"
+          }
+        },
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "Superjson-serialized Prisma query object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserClassProgressFindUniqueArgs"
+                }
+              }
+            }
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "Superjson serialization metadata for parameter \"q\"",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/userClassProgress/findFirst": {
+      "get": {
+        "operationId": "findFirstUserClassProgress",
+        "description": "Find the first UserClassProgress matching the given condition",
+        "tags": [
+          "userClassProgress"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/UserClassProgress",
+                      "description": "The Prisma response data serialized with superjson"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/_Meta",
+                      "description": "The superjson serialization metadata for the \"data\" field"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is unprocessable due to validation errors"
+          }
+        },
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "Superjson-serialized Prisma query object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserClassProgressFindFirstArgs"
+                }
+              }
+            }
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "Superjson serialization metadata for parameter \"q\"",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/userClassProgress/findMany": {
+      "get": {
+        "operationId": "findManyUserClassProgress",
+        "description": "Find a list of UserClassProgress",
+        "tags": [
+          "userClassProgress"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/UserClassProgress"
+                      },
+                      "description": "The Prisma response data serialized with superjson"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/_Meta",
+                      "description": "The superjson serialization metadata for the \"data\" field"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is unprocessable due to validation errors"
+          }
+        },
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "Superjson-serialized Prisma query object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserClassProgressFindManyArgs"
+                }
+              }
+            }
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "Superjson serialization metadata for parameter \"q\"",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/userClassProgress/update": {
+      "patch": {
+        "operationId": "updateUserClassProgress",
+        "description": "Update a UserClassProgress",
+        "tags": [
+          "userClassProgress"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/UserClassProgress",
+                      "description": "The Prisma response data serialized with superjson"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/_Meta",
+                      "description": "The superjson serialization metadata for the \"data\" field"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is unprocessable due to validation errors"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserClassProgressUpdateArgs"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/userClassProgress/updateMany": {
+      "patch": {
+        "operationId": "updateManyUserClassProgress",
+        "description": "Update UserClassProgresss matching the given condition",
+        "tags": [
+          "userClassProgress"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/BatchPayload",
+                      "description": "The Prisma response data serialized with superjson"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/_Meta",
+                      "description": "The superjson serialization metadata for the \"data\" field"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is unprocessable due to validation errors"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserClassProgressUpdateManyArgs"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/userClassProgress/upsert": {
+      "post": {
+        "operationId": "upsertUserClassProgress",
+        "description": "Upsert a UserClassProgress",
+        "tags": [
+          "userClassProgress"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/UserClassProgress",
+                      "description": "The Prisma response data serialized with superjson"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/_Meta",
+                      "description": "The superjson serialization metadata for the \"data\" field"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is unprocessable due to validation errors"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserClassProgressUpsertArgs"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/userClassProgress/delete": {
+      "delete": {
+        "operationId": "deleteUserClassProgress",
+        "description": "Delete one unique UserClassProgress",
+        "tags": [
+          "userClassProgress"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/UserClassProgress",
+                      "description": "The Prisma response data serialized with superjson"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/_Meta",
+                      "description": "The superjson serialization metadata for the \"data\" field"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is unprocessable due to validation errors"
+          }
+        },
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "Superjson-serialized Prisma query object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserClassProgressDeleteUniqueArgs"
+                }
+              }
+            }
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "Superjson serialization metadata for parameter \"q\"",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/userClassProgress/deleteMany": {
+      "delete": {
+        "operationId": "deleteManyUserClassProgress",
+        "description": "Delete UserClassProgresss matching the given condition",
+        "tags": [
+          "userClassProgress"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/BatchPayload",
+                      "description": "The Prisma response data serialized with superjson"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/_Meta",
+                      "description": "The superjson serialization metadata for the \"data\" field"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is unprocessable due to validation errors"
+          }
+        },
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "Superjson-serialized Prisma query object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserClassProgressDeleteManyArgs"
+                }
+              }
+            }
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "Superjson serialization metadata for parameter \"q\"",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/userClassProgress/count": {
+      "get": {
+        "operationId": "countUserClassProgress",
+        "description": "Find a list of UserClassProgress",
+        "tags": [
+          "userClassProgress"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "oneOf": [
+                        {
+                          "type": "integer"
+                        },
+                        {
+                          "$ref": "#/components/schemas/UserClassProgressCountAggregateOutputType"
+                        }
+                      ],
+                      "description": "The Prisma response data serialized with superjson"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/_Meta",
+                      "description": "The superjson serialization metadata for the \"data\" field"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is unprocessable due to validation errors"
+          }
+        },
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "Superjson-serialized Prisma query object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserClassProgressCountArgs"
+                }
+              }
+            }
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "Superjson serialization metadata for parameter \"q\"",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/userClassProgress/aggregate": {
+      "get": {
+        "operationId": "aggregateUserClassProgress",
+        "description": "Aggregate UserClassProgresss",
+        "tags": [
+          "userClassProgress"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/AggregateUserClassProgress",
+                      "description": "The Prisma response data serialized with superjson"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/_Meta",
+                      "description": "The superjson serialization metadata for the \"data\" field"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is unprocessable due to validation errors"
+          }
+        },
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "Superjson-serialized Prisma query object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserClassProgressAggregateArgs"
+                }
+              }
+            }
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "Superjson serialization metadata for parameter \"q\"",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/userClassProgress/groupBy": {
+      "get": {
+        "operationId": "groupByUserClassProgress",
+        "description": "Group UserClassProgresss by fields",
+        "tags": [
+          "userClassProgress"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/UserClassProgressGroupByOutputType"
+                      },
+                      "description": "The Prisma response data serialized with superjson"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/_Meta",
+                      "description": "The superjson serialization metadata for the \"data\" field"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Invalid request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Error"
+                }
+              }
+            },
+            "description": "Request is unprocessable due to validation errors"
+          }
+        },
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "Superjson-serialized Prisma query object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserClassProgressGroupByArgs"
+                }
+              }
+            }
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "Superjson serialization metadata for parameter \"q\"",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
